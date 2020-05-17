@@ -1,7 +1,8 @@
+require('dotenv').config()
 const { Client } = require('discord.js')
 const client = new Client()
 const clientId = '<@710932617154789427>'
-const token = 'NzEwOTMyNjE3MTU0Nzg5NDI3.Xr7tQA.qE0WpUeKzk5PvXFq2pdV_PsUWmM'
+const token = process.env.BOT_TOKEN
 
 const queue = new Map();
 
@@ -27,7 +28,6 @@ client.on('message', async msg => {
   //----------M-U-S-I-C--------------------//
   if (msg.content.startsWith(`${clientId} musiikkia kiitos!`)) {
     const voiceChannel = msg.member.voice.channel
-    console.log(`Voice channel: ${voiceChannel}`)
 
     //ERROR HANDLING
     if (!voiceChannel) return msg.channel.send(`Anteeksi, mutta en kuule! Tule tiskille sanomaan.`)
