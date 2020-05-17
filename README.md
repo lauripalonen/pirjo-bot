@@ -1,2 +1,2 @@
 # pirjo-bot
-Discord bot
+A bar tender bot for the though times. 
